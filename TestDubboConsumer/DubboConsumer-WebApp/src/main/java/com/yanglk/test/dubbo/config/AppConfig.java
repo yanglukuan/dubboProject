@@ -12,7 +12,6 @@ import org.springframework.context.annotation.Configuration;
  * service扫描 dubbo 配置
  */
 @Configuration
-
 public class AppConfig {
 
 

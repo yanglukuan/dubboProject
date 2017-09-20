@@ -20,7 +20,8 @@ import java.util.List;
  */
 @Configuration
 @EnableWebMvc
-@Import({ControllerConfig.class})
+@ComponentScan(basePackages = "com.yanglk.test.dubbo.config")
+//@Import({ControllerConfig.class})
 public class WebConfig extends WebMvcConfigurerAdapter {
     @Bean
     public InternalResourceViewResolver internalResourceViewResolver() {
