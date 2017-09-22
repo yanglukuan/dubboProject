@@ -20,7 +20,7 @@ import java.util.List;
  */
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = "com.yanglk.test.dubbo.config")
+//@ComponentScan(basePackages = "com.yanglk.test.dubbo.config")
 //@Import({ControllerConfig.class})
 public class WebConfig extends WebMvcConfigurerAdapter {
     @Bean

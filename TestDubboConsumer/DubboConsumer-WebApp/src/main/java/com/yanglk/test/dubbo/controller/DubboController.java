@@ -18,17 +18,17 @@ import javax.servlet.http.HttpServletRequest;
 @RequestMapping()
 public class DubboController {
 
-
-    @Autowired
-    private DubboService dubboService;
+//
+//    @Autowired
+//    private DubboService dubboService;
 
     @RequestMapping("index")
     public ModelAndView index() {
         ModelAndView index =new ModelAndView();
         index.setViewName("index");
 
-        String ss=dubboService.sayHello("dubbo");
-        index.addObject("hi",ss);
+//        String ss=dubboService.sayHello("dubbo");
+        index.addObject("hi","ewe");
 
         return index;
     }

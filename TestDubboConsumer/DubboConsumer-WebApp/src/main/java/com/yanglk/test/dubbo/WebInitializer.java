@@ -8,6 +8,10 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
+import java.awt.*;
+import java.net.URI;
+import java.net.URISyntaxException;
+
 
 // 默认只会Component Scan com.ctrip.financialservice.forex.online以及其子package，
 // 如果需要Scan更多的package可以使用
@@ -30,8 +34,10 @@ public class WebInitializer extends SpringBootServletInitializer {
 
 
   //入口方法
-  public static  void main(String[] args) {
+  public static  void main(String[] args) throws Exception {
     SpringApplication.run(WebInitializer.class,args);
+    System.setProperty("java.awt.headless", "false");
+    Desktop.getDesktop().browse(new URI("http://localhost:8080"));
   }
 
 }
