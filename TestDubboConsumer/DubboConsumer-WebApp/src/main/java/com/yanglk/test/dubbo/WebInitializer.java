@@ -37,7 +37,7 @@ public class WebInitializer extends SpringBootServletInitializer {
   public static  void main(String[] args) throws Exception {
     SpringApplication.run(WebInitializer.class,args);
     System.setProperty("java.awt.headless", "false");
-    Desktop.getDesktop().browse(new URI("http://localhost:8080"));
+    //Desktop.getDesktop().browse(new URI("http://localhost:8080"));
   }
 
 }
