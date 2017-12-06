@@ -30,6 +30,10 @@ public class DubboController {
         String ss=dubboService.sayHello("dubbo");
         index.addObject("hi",ss);
 
+
+        String cityName=dubboService.getCity().getName();
+        index.addObject("cityName",cityName);
+
         return index;
     }
 

@@ -8,9 +8,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title></title>
+    <title>test</title>
   </head>
   <body>
-  ${hi}
+  <div>
+    hi: ${hi}
+  </div>
+  <div>
+    cityName:${cityName}
+  </div>
   </body>
 </html>

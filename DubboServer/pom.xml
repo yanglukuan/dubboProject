@@ -6,9 +6,34 @@
 
     <groupId>com.test.dubbo</groupId>
     <artifactId>DubboServer</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>DubboServer-Service</module>
+        <module>DubboServer-Dao</module>
+        <module>DubboServer-Server</module>
+        <module>DubboServer-Model</module>
+    </modules>
 
+    <dependencyManagement>
     <dependencies>
+        <dependency>
+            <groupId>com.test.dubbo</groupId>
+            <artifactId>DubboServer-Model</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.test.dubbo</groupId>
+            <artifactId>DubboServer-Service</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.test.dubbo</groupId>
+            <artifactId>DubboServer-Dao</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     <!-- dubbo -->
     <dependency>
         <groupId>com.alibaba</groupId>
@@ -83,6 +108,7 @@
         <version>4.1.4.RELEASE</version>
     </dependency>
     </dependencies>
+    </dependencyManagement>
 
     <build>
         <plugins>
@@ -99,7 +125,7 @@
                         <configuration>
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>com.test.dubbo.ServiceStart</mainClass>
+                                    <mainClass>com.test.dubbo.impl.ServiceStart</mainClass>
                                 </transformer>
                             </transformers>
                         </configuration>

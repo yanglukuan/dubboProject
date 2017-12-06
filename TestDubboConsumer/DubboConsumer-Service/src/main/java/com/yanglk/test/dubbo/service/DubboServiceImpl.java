@@ -2,8 +2,8 @@ package com.yanglk.test.dubbo.service;
 
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.test.dubbo.TestService;
-import org.springframework.stereotype.Component;
+import com.test.dubbo.CityEntity;
+import com.test.dubbo.service.TestService;
 import org.springframework.stereotype.Service;
 
 /**
@@ -17,5 +17,9 @@ public class DubboServiceImpl implements DubboService {
 
     public String sayHello(String name) {
          return  service.sayHello(name);
+    }
+
+    public CityEntity getCity(){
+        return service.getCity();
     }
 }

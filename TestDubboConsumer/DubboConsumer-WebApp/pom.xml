@@ -82,7 +82,7 @@
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
-    </dependency>
+        </dependency>
 
 
         <!-- dubbo -->
@@ -123,6 +123,10 @@
         <dependency>
             <groupId>com.yanglk.test.dubbo</groupId>
             <artifactId>DubboConsumer-Service</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.yanglk.test.dubbo</groupId>
+            <artifactId>DubboConsumer-Model</artifactId>
         </dependency>
     </dependencies>
 </project>

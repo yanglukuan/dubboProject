@@ -1,10 +1,11 @@
-package com.test.dubbo;
+package com.test.dubbo.server;
 
 import com.alibaba.dubbo.config.ApplicationConfig;
 import com.alibaba.dubbo.config.ProtocolConfig;
 import com.alibaba.dubbo.config.RegistryConfig;
 import com.alibaba.dubbo.config.spring.AnnotationBean;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -21,7 +22,7 @@ public class AppConfig {
     public ApplicationConfig applicationConfig() {
         // 当前应用配置
         ApplicationConfig applicationConfig = new ApplicationConfig();
-        applicationConfig.setName("demo-client");
+        applicationConfig.setName("CityService");
         return applicationConfig;
     }
 
@@ -47,7 +48,7 @@ public class AppConfig {
     @Bean
     public RegistryConfig registryConfig() {
         RegistryConfig registryConfig = new RegistryConfig();
-        registryConfig.setAddress("zookeeper://10.32.70.4:2181");
+        registryConfig.setAddress("zookeeper://127.0.0.1:2181");
         return registryConfig;
     }
 

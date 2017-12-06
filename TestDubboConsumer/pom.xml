@@ -18,6 +18,7 @@
     <modules>
         <module>DubboConsumer-WebApp</module>
         <module>DubboConsumer-Service</module>
+        <module>DubboConsumer-Model</module>
     </modules>
 
     <properties>
@@ -133,6 +134,12 @@
                 <artifactId>DubboConsumer-Service</artifactId>
                 <version>${project.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.yanglk.test.dubbo</groupId>
+                <artifactId>DubboConsumer-Model</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
 
             <!--指定tomcat 版本-->
             <dependency>
