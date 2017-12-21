@@ -30,6 +30,10 @@
             <groupId>com.test.dubbo</groupId>
             <artifactId>DubboServer-Model</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.test.dubbo</groupId>
+            <artifactId>DubboServer-Dao</artifactId>
+        </dependency>
 
         <!-- dubbo -->
         <dependency>

@@ -1,8 +1,12 @@
 package com.test.dubbo.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
+import com.test.dubbo.dao.CityDao;
 import com.test.dubbo.model.CityEntity;
 import com.test.dubbo.service.TestService;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.List;
 
 /**
  * Created by yanglk on 2017/6/7.
@@ -10,18 +14,23 @@ import com.test.dubbo.service.TestService;
 @Service
 public class TestServiceImpl implements TestService {
 
+    @Autowired
+    private CityDao cityDao;
 
     public String sayHello(String name) {
         return "Hi"+name;
     }
 
 
-    public CityEntity getCity() {
-        CityEntity city=new CityEntity();
+    public int getCityCount() {
+        return cityDao.selectCount();
+    }
 
-        city.setName("test");
-        city.setAount(10);
+    public List<CityEntity> getCityList(){
+        return  cityDao.getCityList();
+    }
 
-        return city;
+    public CityEntity  getCityInfo(int id){
+        return  cityDao.getCityInfo(id);
     }
 }

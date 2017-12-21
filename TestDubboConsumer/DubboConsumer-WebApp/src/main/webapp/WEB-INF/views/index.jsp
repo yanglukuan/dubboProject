@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: yanglk
@@ -15,7 +16,24 @@
     hi: ${hi}
   </div>
   <div>
-    cityName:${cityName}
+    cityCount:${cityCount}
   </div>
+
+  <table border="1">
+    <tr>
+      <th>Id</th>
+      <th>District</th>
+      <th>CountryCode</th>
+      <th>Population</th>
+    </tr>
+    <c:forEach items="${cityList}" var="CityEntity">
+      <tr>
+        <td><a href="/city/city?id=${CityEntity.id}">${CityEntity.id}</a></td>
+        <td>${CityEntity.name}</td>
+        <td>${CityEntity.countryCode}</td>
+        <td>${CityEntity.population}</td>
+      </tr>
+    </c:forEach>
+  </table>
   </body>
 </html>

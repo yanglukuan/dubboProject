@@ -4,14 +4,22 @@ import com.alibaba.dubbo.config.ApplicationConfig;
 import com.alibaba.dubbo.config.ProtocolConfig;
 import com.alibaba.dubbo.config.RegistryConfig;
 import com.alibaba.dubbo.config.spring.AnnotationBean;
+import org.mybatis.spring.SqlSessionFactoryBean;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
+
+import javax.naming.NamingException;
+import javax.sql.DataSource;
 
 /**
  * Created by yanglk on 2017/6/9.
  */
 @Configuration
+@MapperScan(basePackages = "com.test.dubbo.dao")
 public class AppConfig {
     /**
      * 注入dubbo上下文
@@ -64,5 +72,32 @@ public class AppConfig {
         //protocolConfig.setSerialization("java");
         return protocolConfig;
     }
+
+
+    //mybatis
+    @Bean
+    public DataSource dataSource() {
+        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+        dataSource.setUrl("jdbc:mysql://192.168.1.103:3306/world");
+        dataSource.setUsername("admin");
+        dataSource.setPassword("123456");
+        return dataSource;
+    }
+
+    @Bean
+    public DataSourceTransactionManager dataSourceTransactionManager() throws NamingException {
+        return new DataSourceTransactionManager(dataSource());
+    }
+
+    @Bean
+    public SqlSessionFactoryBean sqlSessionFactory() throws Exception {
+        SqlSessionFactoryBean factory = new SqlSessionFactoryBean();
+        factory.setDataSource(dataSource());
+//        factory.setConfigLocation(new ClassPathResource("mybatis/mybatis-config.xml"));
+        factory.setTypeAliasesPackage("com.test.dubbo.model");
+        return factory;
+    }
+
 
 }

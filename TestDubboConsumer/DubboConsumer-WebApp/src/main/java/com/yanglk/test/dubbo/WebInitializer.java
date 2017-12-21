@@ -32,6 +32,7 @@ public class WebInitializer extends SpringBootServletInitializer {
   }
 
 
+  //如果使用mian方法调试 则需要在working dirctory中设置为当前目录
 
   //入口方法
   public static  void main(String[] args) throws Exception {

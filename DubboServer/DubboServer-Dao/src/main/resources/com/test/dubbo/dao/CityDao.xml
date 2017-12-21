@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test.dubbo.dao.CityDao">
+    <select id="selectCount" resultType="int">
+        select count(1) from `city`
+    </select>
+
+    <select id="getCityList" resultType="com.test.dubbo.model.CityEntity" >
+        select * from `City` limit 10
+    </select>
+
+    <select id="getCityInfo" resultType="com.test.dubbo.model.CityEntity" >
+        select * from `City` where id=#{id} limit 1
+    </select>
+</mapper>

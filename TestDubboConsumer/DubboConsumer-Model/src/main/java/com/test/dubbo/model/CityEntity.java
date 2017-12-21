@@ -6,7 +6,6 @@ import java.io.Serializable;
  * Created by lukuanpc on 2017/12/6.
  */
 public class CityEntity implements Serializable {
-
     private int id;
     private String name;
     private String countryCode;

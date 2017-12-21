@@ -12,5 +12,42 @@
     <groupId>com.test.dubbo</groupId>
     <artifactId>DubboServer-Dao</artifactId>
 
+    <dependencies>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-expression</artifactId>
+        </dependency>
+
+
+        <!--mybatis-->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+
+        </dependency>
+        <!--mybatis spring整合-->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-spring</artifactId>
+
+        </dependency>
+        <dependency>
+            <groupId>com.test.dubbo</groupId>
+            <artifactId>DubboServer-Model</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>
